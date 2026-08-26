@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAS G-H BTP - Construction et Rénovation</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: #f58220;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #222;
+}
+
+/* ACCUEIL */
+
+.hero {
+    min-height: 650px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: #f58220;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #f58220;
+    color: white;
+    padding: 15px 28px;
+    margin: 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: #f58220;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #f58220;
+    font-size: 38px;
+    margin-bottom: 45px;
+}
+
+/* PRESENTATION */
+
+.about {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+    font-size: 19px;
+}
+
+.about strong {
+    color: #f58220;
+}
+
+/* SERVICES */
+
+.services {
+    background: #f5f5f5;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+
+    border-top: 5px solid #f58220;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    color: #f58220;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+/* POURQUOI NOUS */
+
+.why {
+    max-width: 900px;
+    margin: auto;
+}
+
+.why-item {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.why-item span {
+    color: #f58220;
+    font-weight: bold;
+}
+
+/* REALISATIONS */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #f58220;
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    font-size: 20px;
+}
+
+.phone {
+    display: inline-block;
+    background: white;
+    color: #f58220;
+    padding: 18px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.phone:hover {
+    background: #222;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- MENU -->
+
+<header>
+
+    <div class="logo">
+        SAS G-H BTP
+    </div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#entreprise">Entreprise</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <h1>SAS G-H BTP</h1>
+
+        <h2>CONSTRUCTION & RÉNOVATION</h2>
+
+        <p>
+            Tous types de travaux pour vos projets
+            de construction et de rénovation.
+        </p>
+
+        <a class="button" href="tel:0667921666">
+            📞 Appeler maintenant
+        </a>
+
+        <a class="button" href="#contact">
+            Demander un devis
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ENTREPRISE -->
+
+<section id="entreprise">
+
+    <h2 class="section-title">
+        Notre entreprise
+    </h2>
+
+    <div class="about">
+
+        <p>
+            Bienvenue chez <strong>SAS G-H BTP</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            Nous vous accompagnons dans vos projets
+            de construction, rénovation et aménagement.
+        </p>
+
+        <br>
+
+        <p>
+            Notre objectif est de vous proposer un travail
+            sérieux, soigné et adapté à vos besoins.
+        </p>
+
+        <br>
+
+        <p>
+            Que vous soyez particulier ou professionnel,
+            nous étudions votre projet avec attention.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        Nos services
+    </h2>
+
+
+    <div class="service-grid">
+
+
+        <div class="service">
+
+            <div class="icon">🏗️</div>
+
+            <h3>Construction</h3>
+
+            <p>
+                Construction et réalisation de vos projets
+                dans le respect de vos besoins.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🔨</div>
+
+            <h3>Rénovation</h3>
+
+            <p>
+                Rénovation et transformation de logements
+                et bâtiments.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🧱</div>
+
+            <h3>Maçonnerie</h3>
+
+            <p>
+                Travaux de maçonnerie et différents travaux
+                de construction.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🎨</div>
+
+            <h3>Peinture & finitions</h3>
+
+            <p>
+                Travaux de peinture et finitions
+                intérieures et extérieures.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🏠</div>
+
+            <h3>Aménagement</h3>
+
+            <p>
+                Aménagement et transformation
+                de vos espaces.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🛠️</div>
+
+            <h3>Travaux divers</h3>
+
+            <p>
+                Étude de vos projets de construction,
+                rénovation et amélioration.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <br><br>
+
+    <p style="text-align:center;">
+
+        <strong>
+            ⚠️ Important :
+        </strong>
+
+        SAS G-H BTP ne réalise pas
+        les travaux de charpente métallique.
+
+    </p>
+
+</section>
+
+
+<!-- POURQUOI NOUS -->
+
+<section>
+
+    <h2 class="section-title">
+        Pourquoi choisir SAS G-H BTP ?
+    </h2>
+
+    <div class="why">
+
+        <div class="why-item">
+            <span>✓ Qualité :</span>
+            un travail réalisé avec sérieux.
+        </div>
+
+        <div class="why-item">
+            <span>✓ Professionnalisme :</span>
+            une écoute attentive de vos besoins.
+        </div>
+
+        <div class="why-item">
+            <span>✓ Conseil :</span>
+            des solutions adaptées à votre projet.
+        </div>
+
+        <div class="why-item">
+            <span>✓ Proximité :</span>
+            une entreprise située à Oinville-Saint-Liphard.
+        </div>
+
+        <div class="why-item">
+            <span>✓ Devis :</span>
+            contactez-nous pour étudier votre projet.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REALISATIONS -->
+
+<section id="realisations">
+
+    <h2 class="section-title">
+        Nos réalisations
+    </h2>
+
+    <p style="text-align:center; margin-bottom:30px;">
+
+        Découvrez prochainement les réalisations
+        de SAS G-H BTP.
+
+    </p>
+
+
+    <div class="gallery">
+
+        <img
+        src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
+        alt="Travaux de construction">
+
+        <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+        alt="Travaux du bâtiment">
+
+        <img
+        src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80"
+        alt="Travaux de rénovation">
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contactez-nous
+    </h2>
+
+
+    <div class="contact-box">
+
+        <p>
+            Vous avez un projet de construction
+            ou de rénovation ?
+        </p>
+
+        <p>
+            Contactez <strong>SAS G-H BTP</strong>
+            pour discuter de votre projet.
+        </p>
+
+
+        <a class="phone" href="tel:0667921666">
+            📞 06 67 92 16 66
+        </a>
+
+
+        <p>
+            📍 04 bis route RN 20<br>
+            28310 Oinville-Saint-Liphard
+        </p>
+
+
+        <br>
+
+        <p>
+            <strong>SIRET :</strong> 106357338
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PIED DE PAGE -->
+
+<footer>
+
+    <p>
+        © 2026 SAS G-H BTP
+    </p>
+
+    <p>
+        Construction & Rénovation
+    </p>
+
+    <p>
+        04 bis route RN 20 - 28310 Oinville-Saint-Liphard
+    </p>
+
+    <p>
+        Téléphone : 06 67 92 16 66
+    </p>
+
+    <p>
+        SIRET : 106357338
+    </p>
+
+    <br>
+
+    <p>
+        Tous types de travaux - Hors charpente métallique
+    </p>
+
+</footer>
+
+
+</body>
+</html>
