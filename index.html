@@ -635,41 +635,103 @@ footer p {
 
     </div>
 
+<!-- DEMANDE DE DEVIS -->
+<section id="devis" style="padding:60px 20px; background:#f5f5f5;">
+  <div style="max-width:700px; margin:auto;">
+
+    <h2 style="text-align:center; margin-bottom:10px;">
+      Demande de devis gratuit
+    </h2>
+
+    <p style="text-align:center; margin-bottom:30px;">
+      Décrivez votre projet et G-H BTP vous recontactera rapidement.
+    </p>
+
+    <form onsubmit="envoyerDevis(event)"
+          style="display:flex; flex-direction:column; gap:15px;">
+
+      <label>
+        Nom et prénom *
+        <input type="text" id="nom" required
+               style="width:100%; padding:12px; margin-top:5px;">
+      </label>
+
+      <label>
+        Téléphone *
+        <input type="tel" id="telephone" required
+               style="width:100%; padding:12px; margin-top:5px;">
+      </label>
+
+      <label>
+        Adresse e-mail *
+        <input type="email" id="email" required
+               style="width:100%; padding:12px; margin-top:5px;">
+      </label>
+
+      <label>
+        Adresse des travaux
+        <input type="text" id="adresse"
+               style="width:100%; padding:12px; margin-top:5px;">
+      </label>
+
+      <label>
+        Type de travaux *
+        <select id="travaux" required
+                style="width:100%; padding:12px; margin-top:5px;">
+          <option value="">Choisissez votre projet</option>
+          <option>Construction de maison</option>
+          <option>Rénovation</option>
+          <option>Maçonnerie</option>
+          <option>Terrasse</option>
+          <option>Aménagement intérieur</option>
+          <option>Autres travaux</option>
+        </select>
+      </label>
+
+      <label>
+        Description du projet *
+        <textarea id="message" rows="6" required
+                  placeholder="Décrivez les travaux que vous souhaitez réaliser..."
+                  style="width:100%; padding:12px; margin-top:5px;"></textarea>
+      </label>
+
+      <button type="submit"
+              style="padding:15px; background:#ff7f11; color:white;
+              border:0; border-radius:6px; font-size:18px;
+              font-weight:bold; cursor:pointer;">
+        Envoyer ma demande de devis
+      </button>
+
+    </form>
+  </div>
 </section>
 
+<script>
+function envoyerDevis(event) {
+  event.preventDefault();
 
-<!-- PIED DE PAGE -->
+  const nom = document.getElementById("nom").value;
+  const telephone = document.getElementById("telephone").value;
+  const email = document.getElementById("email").value;
+  const adresse = document.getElementById("adresse").value;
+  const travaux = document.getElementById("travaux").value;
+  const message = document.getElementById("message").value;
 
-<footer>
+  const sujet = "Demande de devis G-H BTP - " + nom;
 
-    <p>
-        © 2026 SAS G-H BTP
-    </p>
+  const contenu =
+    "Nouvelle demande de devis G-H BTP\n\n" +
+    "Nom et prénom : " + nom + "\n" +
+    "Téléphone : " + telephone + "\n" +
+    "E-mail : " + email + "\n" +
+    "Adresse des travaux : " + adresse + "\n" +
+    "Type de travaux : " + travaux + "\n\n" +
+    "Description du projet :\n" + message;
 
-    <p>
-        Construction & Rénovation
-    </p>
-
-    <p>
-        04 bis route RN 20 - 28310 Oinville-Saint-Liphard
-    </p>
-
-    <p>
-        Téléphone : 06 67 92 16 66
-    </p>
-
-    <p>
-        SIRET : 106357338
-    </p>
-
-    <br>
-
-    <p>
-        Tous types de travaux - Hors charpente métallique
-    </p>
-
-</footer>
-
-
-</body>
-</html>
+  window.location.href =
+    "mailto:id.ghbtp@gmail.com?subject=" +
+    encodeURIComponent(sujet) +
+    "&body=" +
+    encodeURIComponent(contenu);
+}
+</script>
